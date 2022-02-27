@@ -3,7 +3,6 @@ package com.balint;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -21,6 +20,7 @@ public class Main {
         task5();
         task6(4261);
         task7();
+        task8(1452);
     }
 
     private static void readData(String fileName) {
@@ -74,6 +74,21 @@ public class Main {
 
     private static void task7() {
         List<Fuvar> errors = fuvarList.stream().filter((f) -> f.getLength() > 0 && f.getPrice() > 0 && f.getDistance() == 0).toList();
-        System.out.printf("7. feladat: ");
+        System.out.printf("""
+                        7. feladat: A hibas fuvarok szama: %d
+                                    A hibas fuvarok hossza %d
+                                    A hibas fuvarok befetele %.2f
+                        """,
+                errors.stream().count(),
+                errors.stream().mapToInt(Fuvar::getLength).sum(),
+                errors.stream().mapToDouble(f -> f.getPrice() + f.getTip()).sum());
+    }
+
+    private static void task8(int taxiId) {
+        if (fuvarList.stream().anyMatch((f) -> f.getTaxiId() == taxiId)) {
+            System.out.printf("8. feladat: Van %d id-val taxi a listaban", taxiId);
+        } else {
+            System.out.printf("8. feladat: Nincs %d id-val taxi a listaban", taxiId);
+        }
     }
 }

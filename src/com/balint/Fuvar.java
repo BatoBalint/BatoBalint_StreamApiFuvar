@@ -87,3 +87,4 @@ public class Fuvar {
                 taxiId, start, length, distance, price, tip, paymentMethod);
     }
 }
+
