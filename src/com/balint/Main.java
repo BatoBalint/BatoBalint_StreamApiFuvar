@@ -65,7 +65,7 @@ public class Main {
 
     private static void task5() {
         Fuvar f = fuvarList.stream().max((f1, f2) -> (int) (f1.getTip() / f1.getPrice() - f2.getTip() / f2.getPrice())).get();
-        System.out.printf("5. feladat: a legbokezubb utas %.2f borravalot fizetett a %.2f arhoz kepest\n", f.getTip(), f.getPrice());
+        System.out.printf("5. feladat: a legbokezubb utas %.2f $ borravalot fizetett a %.2f $ arhoz kepest\n", f.getTip(), f.getPrice());
     }
 
     private static void task6(int taxiId) {
