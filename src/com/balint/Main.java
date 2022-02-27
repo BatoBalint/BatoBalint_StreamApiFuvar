@@ -104,11 +104,8 @@ public class Main {
     }
 
     private static void task10() {
-        List<Fuvar> dec24List = fuvarList.stream().filter(f -> f.getStart().contains("12-24")).toList();
-        System.out.printf("10. feladat:\n");
-        for (Fuvar f : dec24List) {
-            System.out.println("\t" + f.toString());
-        }
+        long dec24List = fuvarList.stream().filter(f -> f.getStart().contains("12-24")).count();
+        System.out.printf("10. feladat: %d db\n", dec24List);
     }
 
     private static void task11() {
