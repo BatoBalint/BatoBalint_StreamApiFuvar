@@ -21,6 +21,7 @@ public class Main {
         task6(4261);
         task7();
         task8(1452);
+        task9();
     }
 
     private static void readData(String fileName) {
@@ -86,9 +87,17 @@ public class Main {
 
     private static void task8(int taxiId) {
         if (fuvarList.stream().anyMatch((f) -> f.getTaxiId() == taxiId)) {
-            System.out.printf("8. feladat: Van %d id-val taxi a listaban", taxiId);
+            System.out.printf("8. feladat: Van %d id-val taxi a listaban\n", taxiId);
         } else {
-            System.out.printf("8. feladat: Nincs %d id-val taxi a listaban", taxiId);
+            System.out.printf("8. feladat: Nincs %d id-val taxi a listaban\n", taxiId);
+        }
+    }
+
+    private static void task9() {
+        List<Fuvar> fuvars = fuvarList.stream().filter(f -> f.getLength() != 0).sorted((f1, f2) -> f2.getLength() - f1.getLength()).limit(3).toList();
+        System.out.println("9. feladat: A 3 leggyorsabb fuvar:");
+        for (Fuvar f : fuvars) {
+            System.out.println("\t" + f.toString());
         }
     }
 }
