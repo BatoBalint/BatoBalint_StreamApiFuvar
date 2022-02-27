@@ -23,6 +23,7 @@ public class Main {
         task8(1452);
         task9();
         task10();
+        task11();
     }
 
     private static void readData(String fileName) {
@@ -108,5 +109,11 @@ public class Main {
         for (Fuvar f : dec24List) {
             System.out.println("\t" + f.toString());
         }
+    }
+
+    private static void task11() {
+        double price = fuvarList.stream().filter(f -> f.getStart().contains("12-31")).mapToDouble(Fuvar::getPrice).sum();
+        double tip = fuvarList.stream().filter(f -> f.getStart().contains("12-31")).mapToDouble(Fuvar::getTip).sum();
+        System.out.printf("11. feladat: December 31-en a fuvarok utan atlagosan %.2f %% borravalot adtak", tip / price * 100);
     }
 }
