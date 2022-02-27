@@ -22,6 +22,7 @@ public class Main {
         task7();
         task8(1452);
         task9();
+        task10();
     }
 
     private static void readData(String fileName) {
@@ -97,6 +98,14 @@ public class Main {
         List<Fuvar> fuvars = fuvarList.stream().filter(f -> f.getLength() != 0).sorted((f1, f2) -> f2.getLength() - f1.getLength()).limit(3).toList();
         System.out.println("9. feladat: A 3 leggyorsabb fuvar:");
         for (Fuvar f : fuvars) {
+            System.out.println("\t" + f.toString());
+        }
+    }
+
+    private static void task10() {
+        List<Fuvar> dec24List = fuvarList.stream().filter(f -> f.getStart().contains("12-24")).toList();
+        System.out.printf("10. feladat:\n");
+        for (Fuvar f : dec24List) {
             System.out.println("\t" + f.toString());
         }
     }

@@ -83,7 +83,7 @@ public class Fuvar {
 
     @Override
     public String toString() {
-        return String.format("%d: %s, length: %d, distance: %f mile, price: %f (+%f), method: %s",
+        return String.format("%d: %s, length: %d, distance: %.1f mile, price: %.2f (+%.2f), method: %s",
                 taxiId, start, length, distance, price, tip, paymentMethod);
     }
 }
