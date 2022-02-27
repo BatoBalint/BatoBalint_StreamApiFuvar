@@ -10,6 +10,64 @@ public class Fuvar {
     private double tip;
     private String paymentMethod;
 
+    //region Getter / Setter
+    public int getTaxiId() {
+        return taxiId;
+    }
+
+    public String getStart() {
+        return start;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public double getDistance() {
+        return distance;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public double getTip() {
+        return tip;
+    }
+
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setTaxiId(int taxiId) {
+        this.taxiId = taxiId;
+    }
+
+    public void setStart(String start) {
+        this.start = start;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+
+    public void setDistance(double distance) {
+        this.distance = distance;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setTip(double tip) {
+        this.tip = tip;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+    //endregion
+
     public Fuvar(String line) {
         line = line.replace(",", ".");
         String[] data = line.split(";");

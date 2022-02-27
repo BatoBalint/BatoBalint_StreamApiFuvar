@@ -13,6 +13,8 @@ public class Main {
         readData("fuvar.csv");
 
         task1();
+        task2(6185);
+        task3();
     }
 
     private static void readData(String fileName) {
@@ -37,6 +39,17 @@ public class Main {
     }
 
     private static void task1() {
-        System.out.println(fuvarList.stream().count());
+        System.out.println("1. feladat: " + fuvarList.stream().count() + "db utazas kerult feljegyzesre");
+    }
+
+    private static void task2(int taxiId) {
+        double rides = fuvarList.stream().filter((a) -> a.getTaxiId() == taxiId).count();
+        double sum = fuvarList.stream().filter((a) -> a.getTaxiId() == taxiId).mapToDouble((a) -> a.getPrice() + a.getTip()).sum();
+
+        System.out.printf("2. feladat: %d fuvarbol %.2f $ volt a fizetese", (int) rides, sum);
+    }
+
+    private static void task3() {
+
     }
 }
